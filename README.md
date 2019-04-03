@@ -16,6 +16,10 @@
     </body>
   </html>
   ```
+- 因为是 xhtml，`br`,`hr` 等单元素要注意闭合。
+  ```html
+  <br />
+  ```
 
 ## 样式
 
@@ -27,7 +31,8 @@
 ## 布局
 
 - 用 table 进行布局。
-- table 宽度设置为 100%（固定宽度 600px），border 设为 0，行间距和列间距都设为 0，页面居中对齐。
+- 如果是固定宽度，table 的宽度最大不要超过 600px，不然会有兼容性问题。
+- border 设为 0，行间距和列间距都设为 0，页面居中对齐。
   ```html
   <table border="0" width="100%" cellpadding="0" cellspacing="0" align="center" ...>
     ...
@@ -39,17 +44,17 @@
     ...
   </table>
   ```
-- 开发时，可把 border 设置为 1，便于查看边界。发布时，把 border 改回为 0。
-- 不要用 float，position。
+- 开发时，可把 `border` 设置为 1，便于查看边界。发布时，把 `border` 改回为 0。
+- 不要用 `float`, `position` 等样式。
   > `float` 在 Outlook 中无法识别。
 
 ## 图片
 
-- 设置 `width`, `height`，万一图片显示不了，也可以撑起页面。
+- 尽量设置 `width`, `height`，万一图片显示不了，也可以撑起页面。
 - `width` 和 `height` 要是标准 html 属性，只要写数字，千万不要画蛇添足加 px 等单位。
-- 想设置 `width` 和 `height` 单位的，必须写在行内样式里面。
-- 重要图片要设置 `alt`, `title`。因为很多 web 邮件默认不显示图片，设置 alt 和 title 可以让用户知道要点击下载。
-- Outlook 2007-2013 不支持图片的 margin 与 padding 样式，必要的时候可以尝试 hspace 和 vspace 属性。
+- 想设置带有单位的 `width` 和 `height` ，必须写在行内样式里面。
+- 重要图片一定要设置 `alt`, `title`。因为很多 web 邮件默认是不显示图片，设置 `alt` 和 `title` 可以让用户知道要点击下载图片。
+- Outlook 2007-2013 不支持图片的 `margin` 与 `padding` 样式，必要的时候可以用非标准属性 `hspace` 和 `vspace`。
   ```html
   <img vspace="20" hspace="10" src="***.png" />
   ```

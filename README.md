@@ -16,9 +16,11 @@
     </body>
   </html>
   ```
-- 因为是 xhtml，`br`,`hr` 等单元素要注意闭合。
+- 因为是 xhtml，`br`,`hr`, `img` 等单元素要注意闭合。
   ```html
   <br />
+  <hr />
+  <img ... />
   ```
 
 ## 样式
@@ -51,9 +53,12 @@
 ## 图片
 
 - 尽量设置 `width`, `height`，万一图片显示不了，也可以撑起页面。
-- `width` 和 `height` 要是标准 html 属性，只要写数字，千万不要画蛇添足加 px 等单位。
+- `width` 和 `height` 是标准 html 属性，只要写数字，千万不要画蛇添足加 px 等单位。
+  ```html
+  <img width="200" height="100" alt="bill" title="" src="***.jpg" />
+  ```
 - 想设置带有单位的 `width` 和 `height` ，必须写在行内样式里面。
-- 重要图片一定要设置 `alt`, `title`。因为很多 web 邮件默认是不显示图片，设置 `alt` 和 `title` 可以让用户知道要点击下载图片。
+- 重要图片一定要设置 `alt`。因为很多 web 邮件默认是不显示图片，设置 `alt` 可以让用户知道图片大致什么内容。
 - Outlook 2007-2013 不支持图片的 `margin` 与 `padding` 样式，必要的时候可以用非标准属性 `hspace` 和 `vspace`。
   ```html
   <img vspace="20" hspace="10" src="***.png" />
